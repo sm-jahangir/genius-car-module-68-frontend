@@ -39,6 +39,13 @@ const Header = () => {
               ) : (
                 ""
               )}
+              {user ? (
+                <Nav.Link as={Link} to="manageservices">
+                  Manage Service
+                </Nav.Link>
+              ) : (
+                ""
+              )}
             </Nav>
             <Nav>
               <Nav.Link as={Link} to="about">
