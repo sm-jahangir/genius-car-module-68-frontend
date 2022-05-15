@@ -30,6 +30,7 @@ const Checkout = () => {
     event.preventDefault();
     const order = {
       service: service.name,
+      email: user.email,
       serviceId: serviceId,
       address: event.target.address.value,
       phone: event.target.phone.value,
