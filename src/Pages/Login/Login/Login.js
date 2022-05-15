@@ -46,7 +46,7 @@ const Login = () => {
     await signInWithEmailAndPassword(email, password);
     const { data } = await axios.post("http://localhost:4000/login", { email });
     localStorage.setItem("accessToken", data.accessToken);
-    // console.log(data);
+    console.log(data);
     navigate(from, { replace: true });
   };
 
