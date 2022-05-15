@@ -11,6 +11,7 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
+import axios from "axios";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -37,12 +38,16 @@ const Login = () => {
     errorElement = <p className="text-danger">Error: {error?.message}</p>;
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
+    const { data } = await axios.post("http://localhost:4000/login", { email });
+    localStorage.setItem("accessToken", data.accessToken);
+    // console.log(data);
+    navigate(from, { replace: true });
   };
 
   const navigateRegister = (event) => {
