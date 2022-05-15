@@ -46,6 +46,13 @@ const Header = () => {
               ) : (
                 ""
               )}
+              {user ? (
+                <Nav.Link as={Link} to="orders">
+                  Orders
+                </Nav.Link>
+              ) : (
+                ""
+              )}
             </Nav>
             <Nav>
               <Nav.Link as={Link} to="about">
