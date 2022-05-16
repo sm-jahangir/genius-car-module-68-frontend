@@ -19,7 +19,7 @@ function Order() {
   //System - 4
   useEffect(() => {
     const getOrders = async () => {
-      const email = user.email;
+      const email = user?.email;
       const url = `https://guarded-escarpment-12321.herokuapp.com/orders?email=${email}`;
       try {
         const { data } = await axiosPrivate.get(url);
