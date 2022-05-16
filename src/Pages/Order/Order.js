@@ -11,7 +11,7 @@ function Order() {
   const navigate = useNavigate();
   //System - 1
   // useEffect(() => {
-  //   fetch("http://localhost:4000/orders")
+  //   fetch("https://guarded-escarpment-12321.herokuapp.com/orders")
   //     .then((res) => res.json())
   //     .then((data) => setOrders(data));
   // }, []);
@@ -20,7 +20,7 @@ function Order() {
   useEffect(() => {
     const getOrders = async () => {
       const email = user.email;
-      const url = `http://localhost:4000/orders?email=${email}`;
+      const url = `https://guarded-escarpment-12321.herokuapp.com/orders?email=${email}`;
       try {
         const { data } = await axiosPrivate.get(url);
         setOrders(data);
@@ -37,7 +37,7 @@ function Order() {
 
   //System - 2
   // axios
-  //   .get("http://localhost:4000/orders")
+  //   .get("https://guarded-escarpment-12321.herokuapp.com/orders")
   //   .then(function (response) {
   //     setOrders(response.data);
   //   })
@@ -48,7 +48,7 @@ function Order() {
   // System - 3
   // async function getUser() {
   //   try {
-  //     const url = `http://localhost:4000/orders`;
+  //     const url = `https://guarded-escarpment-12321.herokuapp.com/orders`;
   //     const response = await axios.get(url);
   //     setOrders(response.data);
   //   } catch (error) {

@@ -36,7 +36,7 @@ const Checkout = () => {
       phone: event.target.phone.value,
     };
     axios
-      .post("http://localhost:4000/order", order)
+      .post("https://guarded-escarpment-12321.herokuapp.com/order", order)
       .then(function (response) {
         console.log(response);
         const { data } = response;

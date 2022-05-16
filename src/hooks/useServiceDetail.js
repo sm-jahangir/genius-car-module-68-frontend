@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const useServiceDetail = (serviceId) => {
   const [service, setService] = useState({});
   useEffect(() => {
-    const url = `http://localhost:4000/service/${serviceId}`;
+    const url = `https://guarded-escarpment-12321.herokuapp.com/service/${serviceId}`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => setService(data));
